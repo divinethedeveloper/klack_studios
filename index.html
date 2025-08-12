@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLACK Studios | Premium Cinema</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff5e1a;
+            --primary-dark: #e04b00;
+            --bg-dark: #0a0a0a;
+            --bg-light: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), 
+                        url('https://images.unsplash.com/photo-1612977060650-77024e7aac63?q=80&w=1974&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 0 10vw;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 50%;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 80%;
+            opacity: 0;
+            animation: fadeIn 1s ease 0.8s forwards;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.9rem 2.5rem;
+            background: var(--primary);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeIn 0.5s ease 1.2s forwards;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 94, 26, 0.2);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Content Section */
+        .section {
+            padding: 8rem 5vw;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 2/3;
+            background: var(--bg-light);
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .grid-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .grid-item:hover img {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+
+        .grid-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .grid-item:hover .grid-item-overlay {
+            opacity: 1;
+        }
+
+        .grid-item-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .grid-item:hover .grid-item-title {
+            transform: translateY(0);
+        }
+
+        .grid-item-meta {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transform: translateY(20px);
+            transition: var(--transition);
+            transition-delay: 0.1s;
+        }
+
+        .grid-item:hover .grid-item-meta {
+            transform: translateY(0);
+        }
+
+        /* Side Panel */
+        .side-panel {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 320px;
+            background: var(--bg-dark);
+            padding: 5rem 2rem;
+            transform: translateX(-100%);
+            transition: var(--transition);
+            z-index: 200;
+            box-shadow: 5px 0 30px rgba(0, 0, 0, 0.5);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .side-panel.open {
+            transform: translateX(0);
+        }
+
+        .side-panel-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .side-panel-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .side-panel-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .side-panel-nav a:hover {
+            color: var(--text-primary);
+            transform: translateX(5px);
+        }
+
+        .side-panel-nav a::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .side-panel-nav a:hover::before {
+            opacity: 1;
+        }
+
+        .menu-toggle {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 10, 10, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--text-primary);
+            cursor: pointer;
+            z-index: 201;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .menu-toggle:hover {
+            background: rgba(255, 94, 26, 0.2);
+            border-color: rgba(255, 94, 26, 0.3);
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-light);
+            padding: 4rem 5vw;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-social a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                max-width: 70%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar .nav-links {
+                display: none;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+            
+            .hero-subtitle {
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+            }
+            
+            .side-panel {
+                width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 5rem 5vw;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-toggle" onclick="togglePanel()">☰</button>
+    
+    <nav class="navbar" id="navbar">
+        <div class="logo">KLACK STUDIOS</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+             <a href="#">Coming Soon</a>
+            <a href="#">Catalog</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Knights of Wales</h1>
+                <p class="hero-subtitle">An epic tale of honor and betrayal set against the rugged landscapes of medieval Wales. Coming this fall to theaters worldwide.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn">Stream Now</a>
+                    <a href="#" class="btn btn-secondary">Watch Trailer</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Featured Productions</h2>
+            <div class="grid">
+                <div class="grid-item">
+                    <img src="https://source.unsplash.com/random/600x900/?movie,cinematic" alt="Production 1">
+                    <div class="grid-item-overlay">
+                        <h3 class="grid-item-title">Shadows of the Past</h3>
+                        <p class="grid-item-meta">2023 • Drama • 2h 18m</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="https://source.unsplash.com/random/600x900/?film,noir" alt="Production 2">
+                    <div class="grid-item-overlay">
+                        <h3 class="grid-item-title">Neon Dreams</h3>
+                        <p class="grid-item-meta">2022 • Sci-Fi • 1h 52m</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="https://source.unsplash.com/random/600x900/?cinema,drama" alt="Production 3">
+                    <div class="grid-item-overlay">
+                        <h3 class="grid-item-title">The Last Letter</h3>
+                        <p class="grid-item-meta">2023 • Romance • 2h 5m</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="https://source.unsplash.com/random/600x900/?thriller,mystery" alt="Production 4">
+                    <div class="grid-item-overlay">
+                        <h3 class="grid-item-title">Whispering Pines</h3>
+                        <p class="grid-item-meta">2024 • Thriller • 1h 48m</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" style="background: var(--bg-light);">
+            <h2 class="section-title">Coming Soon</h2>
+            <div class="grid">
+                <div class="grid-item">
+                    <img src="https://source.unsplash.com/random/600x900/?adventure,epic" alt="Coming Soon 1">
+                    <div class="grid-item-overlay">
+                        <h3 class="grid-item-title">Ocean's Edge</h3>
+                        <p class="grid-item-meta">2024 • Adventure • Coming June</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="https://source.unsplash.com/random/600x900/?fantasy,medieval" alt="Coming Soon 2">
+                    <div class="grid-item-overlay">
+                        <h3 class="grid-item-title">The Forgotten Kingdom</h3>
+                        <p class="grid-item-meta">2024 • Fantasy • Coming August</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="https://source.unsplash.com/random/600x900/?scifi,futuristic" alt="Coming Soon 3">
+                    <div class="grid-item-overlay">
+                        <h3 class="grid-item-title">Event Horizon</h3>
+                        <p class="grid-item-meta">2024 • Sci-Fi • Coming October</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="https://source.unsplash.com/random/600x900/?comedy,modern" alt="Coming Soon 4">
+                    <div class="grid-item-overlay">
+                        <h3 class="grid-item-title">Modern Times</h3>
+                        <p class="grid-item-meta">2024 • Comedy • Coming December</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-logo">KLACK STUDIOS</div>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+        </div>
+        <div class="footer-social">
+            <a href="#">⌨</a>
+            <a href="#">⌨</a>
+            <a href="#">⌨</a>
+            <a href="#">⌨</a>
+        </div>
+        <p class="footer-copyright">© 2023 KLACK Studios. All rights reserved.</p>
+    </footer>
+
+    <div class="side-panel" id="sidePanel">
+        <div class="side-panel-logo">KLACK</div>
+        <nav class="side-panel-nav">
+            <a href="#">Home</a>
+            <a href="#">Productions</a>
+            <a href="#">Catalog</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+        </nav>
+    </div>
+
+    <script>
+        function togglePanel() {
+            const panel = document.getElementById('sidePanel');
+            panel.classList.toggle('open');
+        }
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animate grid items on scroll
+        const gridItems = document.querySelectorAll('.grid-item');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        gridItems.forEach((item, index) => {
+            item.style.opacity = 0;
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
