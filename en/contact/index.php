@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../../styles/nav.css">
+    <link rel="stylesheet" href="../../styles/footer.css">
+
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -41,71 +43,15 @@
             letter-spacing: -0.5px;
         }
 
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem 5vw;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(10, 10, 10, 0.98);
-            z-index: 100;
-            transition: var(--transition);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -1px;
-            text-decoration: none;
-        }
-
-        .navbar .nav-links {
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        .navbar .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .navbar .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--primary);
-            transition: var(--transition);
-        }
-
-        .navbar .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        .navbar .nav-links a:hover::after {
-            width: 100%;
-        }
+        
 
         /* Hero */
         .contact-hero {
             height: 60vh;
             min-height: 500px;
             width: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop');
+            background: radial-gradient(rgba(0, 0, 0, 0.39),rgba(0, 0, 0, 0.47), rgba(183, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1587560699334-cc4ff634909a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -114,8 +60,7 @@
             text-align: center;
             padding: 0 5vw;
             position: relative;
-            margin-top: 80px;
-        }
+         }
 
         .contact-hero::before {
             content: '';
@@ -281,62 +226,7 @@
             transform: translateY(0);
         }
 
-        /* Footer */
-        .footer {
-            background: var(--bg-dark);
-            padding: 4rem 5vw;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-social a {
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .footer-social a:hover {
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-copyright {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
+       
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -465,23 +355,8 @@
         </div>
     </section>
     
-    <footer class="footer">
-        <div class="footer-logo logo">KLACK STUDIOS</div>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Careers</a>
-            <a href="#">Press</a>
-            <a href="#">Contact</a>
-        </div>
-        <div class="footer-social">
-            <a href="#">⌨</a>
-            <a href="#">⌨</a>
-            <a href="#">⌨</a>
-            <a href="#">⌨</a>
-        </div>
-        <p class="footer-copyright">© 2024 KLACK Studios. All rights reserved.</p>
-    </footer>
+    <?php require_once "../../components/footer.php"?>
+
     <script src='../../scripts/nav.js'></script>
 
 

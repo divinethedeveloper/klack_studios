@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href='../../styles/nav.css'?>
+    <link rel="stylesheet" href="../../styles/footer.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -57,8 +59,7 @@
             text-align: center;
             padding: 0 5vw;
             position: relative;
-            margin-top: 80px;
-        }
+         }
 
         .catalog-hero::before {
             content: '';
@@ -271,63 +272,7 @@
             color: var(--text-primary);
             border-color: var(--primary);
         }
-
-        /* Footer */
-        .footer {
-            background: var(--bg-dark);
-            padding: 4rem 5vw;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-social a {
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .footer-social a:hover {
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-copyright {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
+ 
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -536,23 +481,8 @@
         </div>
     </section>
     
-    <footer class="footer">
-        <div class="footer-logo">KLACK STUDIOS</div>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Careers</a>
-            <a href="#">Press</a>
-            <a href="#">Contact</a>
-        </div>
-        <div class="footer-social">
-            <a href="#">⌨</a>
-            <a href="#">⌨</a>
-            <a href="#">⌨</a>
-            <a href="#">⌨</a>
-        </div>
-        <p class="footer-copyright">© 2025 KLACK Studios. All rights reserved.</p>
-    </footer>
+    <?php require_once "../../components/footer.php"?>
+
     <script src='../../scripts/nav.js'></script>
 
 

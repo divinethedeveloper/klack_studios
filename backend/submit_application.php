@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($agency)) $errors[] = "Agency status is required";
 
     // Handle file uploads
-    $upload_dir = "uploads/";
+    $upload_dir = "../../uploads/";
     if (!is_dir($upload_dir)) {
         mkdir($upload_dir, 0755, true);
     }

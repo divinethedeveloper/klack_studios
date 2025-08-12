@@ -6,8 +6,10 @@
     <title>KLACK Studios | Actor Application</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=stylesheet" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Bebas+Neue&display=stylesheet" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/nav.css">
+    <link rel="stylesheet" href="../../styles/footer.css">
+
     <style>
         :root {
             --primary: #ff5e1a;
@@ -17,6 +19,8 @@
             --text-primary: #ffffff;
             --text-secondary: #b3b3b3;
             --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --graffiti-green: #00ff00;
+            --graffiti-purple: #ff00ff;
         }
 
         * {
@@ -42,15 +46,20 @@
 
         .container {
             width: 100%;
-            min-height: 100vh;
+            height: 100vh;
             padding: 2rem 5vw;
+            background: url('https://images.unsplash.com/photo-1622107906469-632c870f19e9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'), rgba(15, 0, 0, 0.82);
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            overflow-y: auto;
         }
 
         .form-section {
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
-            background: var(--bg-light);
+            background: rgba(16, 6, 6, 0.9);
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 0.8s ease forwards;
@@ -285,27 +294,144 @@
             margin-top: 1rem;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
+        /* Loading Popup */
+        .loading-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-content {
+            text-align: center;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--text-secondary);
+            border-top: 5px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Success/Error Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 600px;
+            width: 90%;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+            text-align: center;
+            animation: modalPop 0.5s ease forwards;
+        }
+
+        .modal-content.success h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            color: var(--graffiti-green);
+            text-shadow: 2px 2px 4px var(--graffiti-purple), -2px -2px 4px var(--primary);
+            animation: graffitiPulse 2s infinite;
+        }
+
+        .modal-content.error h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: #ff4444;
+        }
+
+        .modal-content p {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            color: var(--text-primary);
+        }
+
+        .modal-content ul {
+            list-style: none;
+            margin: 1rem 0;
+            color: #ff4444;
+            text-align: left;
+        }
+
+        .modal-content .btn {
+            margin-top: 1rem;
+        }
+
+        .modal-content .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .canvas-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        @keyframes graffitiPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes modalPop {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: scale(0.8);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: scale(1);
             }
         }
 
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Responsive Design */
@@ -335,6 +461,10 @@
                 flex-direction: column;
                 gap: 1rem;
             }
+
+            .modal-content.success h2 {
+                font-size: 2.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -360,16 +490,30 @@
                 width: 100%;
                 justify-content: center;
             }
+
+            .modal-content.success h2 {
+                font-size: 2rem;
+            }
+
+            .modal-content p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <?php require_once '../../components/nav.php'?>
+    <?php
+    session_start();
+    $csrf_token = bin2hex(random_bytes(32));
+    $_SESSION['csrf_token'] = $csrf_token;
+    require_once '../../components/nav.php';
+    ?>
 
     <div class="container">
         <section class="form-section">
             <h2 class="section-title">Actor Application Form</h2>
-            <form action="../../backend/submit_application.php" method="POST" enctype="multipart/form-data">
+            <form id="actor-application-form" action="../../backend/submit_application.php" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
                 <div class="progress-bar">
                     <div class="progress-step active" data-step="1">Personal Info</div>
                     <div class="progress-step" data-step="2">Professional Experience</div>
@@ -573,22 +717,28 @@
         </section>
     </div>
 
-    <!-- <footer class="footer">
-        <div class="footer-logo">KLACK STUDIOS</div>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Careers</a>
-            <a href="#">Press</a>
+    <!-- Loading Popup -->
+    <div class="loading-popup" id="loading-popup">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Submitting...</p>
         </div>
-        <div class="footer-social">
-            <a href="#">⌨</a>
-            <a href="#">⌨</a>
-            <a href="#">⌨</a>
-            <a href="#">⌨</a>
+    </div>
+
+    <!-- Success/Error Modal -->
+    <div class="modal" id="response-modal">
+        <div class="modal-content">
+            <canvas class="canvas-bg" id="particle-canvas"></canvas>
+            <button class="close-btn" id="close-modal">&times;</button>
+            <h2 id="modal-title"></h2>
+            <p id="modal-message"></p>
+            <div id="modal-errors"></div>
+            <a id="modal-link" class="btn" style="display: none;" href="https://chat.whatsapp.com/INVITE_LINK_HERE" target="_blank">Join Our WhatsApp Group</a>
+            <button class="btn" id="modal-close-btn" style="display: none;">Close</button>
         </div>
-        <p class="footer-copyright">© 2023 KLACK Studios. All rights reserved.</p>
-    </footer> -->
+    </div>
+
+    <?php require_once "../../components/footer.php"?>
 
     <script src='../../scripts/nav.js'></script>
     <script>
@@ -597,6 +747,16 @@
         const sectionContents = document.querySelectorAll('.section-content');
         const nextButtons = document.querySelectorAll('.next-btn');
         const prevButtons = document.querySelectorAll('.prev-btn');
+        const form = document.getElementById('actor-application-form');
+        const loadingPopup = document.getElementById('loading-popup');
+        const responseModal = document.getElementById('response-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalMessage = document.getElementById('modal-message');
+        const modalErrors = document.getElementById('modal-errors');
+        const modalLink = document.getElementById('modal-link');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+        const closeModalBtn = document.getElementById('close-modal');
+        const modalContent = responseModal.querySelector('.modal-content');
 
         function showSection(step) {
             progressSteps.forEach(stepEl => stepEl.classList.remove('active'));
@@ -608,7 +768,6 @@
             targetStep.classList.add('active');
             targetContent.classList.add('active');
 
-            // Mark previous steps as completed
             progressSteps.forEach((stepEl, index) => {
                 if (parseInt(stepEl.dataset.step) < step) {
                     stepEl.classList.add('completed');
@@ -659,6 +818,118 @@
                 label.textContent = fileName;
             });
         });
+
+        // Form submission with AJAX
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            loadingPopup.style.display = 'flex';
+
+            const formData = new FormData(form);
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const text = await response.text();
+                loadingPopup.style.display = 'none';
+
+                // Check if the response contains success message
+                if (text.includes('Application Submitted Successfully')) {
+                    modalContent.classList.add('success');
+                    modalContent.classList.remove('error');
+                    modalTitle.textContent = 'Congratulations!';
+                    modalMessage.innerHTML = 'Your submission has been sent! Thank you for applying to KLACK Studios. We\'ll review your application and get back to you soon.';
+                    modalErrors.innerHTML = '';
+                    modalLink.style.display = 'inline-flex';
+                    modalCloseBtn.style.display = 'inline-flex';
+                    responseModal.style.display = 'flex';
+                    startParticles();
+                } else {
+                    modalContent.classList.add('error');
+                    modalContent.classList.remove('success');
+                    modalTitle.textContent = 'Submission Errors';
+                    modalMessage.textContent = 'Please correct the following errors and try again:';
+                    modalErrors.innerHTML = text.includes('<ul>') ? text.match(/<ul>[\s\S]*<\/ul>/)[0] : '<p>Unknown error occurred.</p>';
+                    modalLink.style.display = 'none';
+                    modalCloseBtn.style.display = 'inline-flex';
+                    responseModal.style.display = 'flex';
+                    stopParticles();
+                }
+            } catch (error) {
+                loadingPopup.style.display = 'none';
+                modalContent.classList.add('error');
+                modalContent.classList.remove('success');
+                modalTitle.textContent = 'Error';
+                modalMessage.textContent = 'Something went wrong. Please try again later.';
+                modalErrors.innerHTML = '';
+                modalLink.style.display = 'none';
+                modalCloseBtn.style.display = 'inline-flex';
+                responseModal.style.display = 'flex';
+                stopParticles();
+            }
+        });
+
+        // Close modal
+        closeModalBtn.addEventListener('click', () => {
+            responseModal.style.display = 'none';
+            stopParticles();
+        });
+
+        modalCloseBtn.addEventListener('click', () => {
+            responseModal.style.display = 'none';
+            stopParticles();
+        });
+
+        // Particle animation for success modal
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let animationFrameId;
+
+        function resizeCanvas() {
+            canvas.width = modalContent.offsetWidth;
+            canvas.height = modalContent.offsetHeight;
+        }
+
+        function createParticle() {
+            return {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 5 + 2,
+                speedX: (Math.random() - 0.5) * 4,
+                speedY: (Math.random() - 0.5) * 4,
+                color: `hsl(${Math.random() * 360}, 70%, 50%)`
+            };
+        }
+
+        function startParticles() {
+            resizeCanvas();
+            particles = Array.from({ length: 50 }, createParticle);
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.x += p.speedX;
+                    p.y += p.speedY;
+                    if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.fill();
+                });
+                animationFrameId = requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        function stopParticles() {
+            cancelAnimationFrame(animationFrameId);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles = [];
+        }
+
+        window.addEventListener('resize', resizeCanvas);
     </script>
 </body>
 </html>

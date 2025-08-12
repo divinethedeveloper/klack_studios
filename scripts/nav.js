@@ -1,20 +1,4 @@
  
-function togglePanel() {
-    const panel = document.getElementById('sidePanel');
-    panel.classList.toggle('open');
-}
-
-window.addEventListener('scroll', function() {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-
-
 
 window.onload = function() {
     let element = document.getElementsByClassName("preloader")[0];
@@ -32,3 +16,22 @@ window.onload = function() {
         element.classList.add("none");
     }, 2000);
 };
+
+
+
+function togglePanel() {
+    const panel = document.getElementById('sidePanel');
+    panel.classList.toggle('open');
+}
+
+window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+
+

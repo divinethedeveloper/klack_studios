@@ -6,6 +6,8 @@
     <title>KLACK Studios | Premium Cinema</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="../../styles/nav.css">
+    <link rel="stylesheet" href="../../styles/footer.css">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -52,10 +54,7 @@
         .hero {
             height: 100vh;
             width: 100%;
-            background: 
-    linear-gradient(45deg, rgba(0, 0, 0, 0.32), rgba(23, 19, 19, 0.28)),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.24), rgba(40, 2, 2, 0.5)),
-    url(../../assets/photo-1612977060650-77024e7aac63.jpg);
+            background: url(../../assets/photo-1612977060650-77024e7aac63.jpg), rgba(0, 0, 0, 0.59);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -255,59 +254,7 @@
 
         
 
-        /* Footer */
-        .footer {
-            background: var(--bg-light);
-            padding: 4rem 5vw;
-            text-align: center;
-        }
-
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-social a {
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .footer-social a:hover {
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-copyright {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
+        
 
         .apply-section {
             padding: 8rem 5vw;
@@ -616,22 +563,8 @@
         </div>
     </section>
  
-    <footer class="footer">
-        <div class="footer-logo">KLACK STUDIOS</div>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Careers</a>
-            <a href="#">Press</a>
-        </div>
-        <div class="footer-social">
-            <a href="#">⌨</a>
-            <a href="#">⌨</a>
-            <a href="#">⌨</a>
-            <a href="#">⌨</a>
-        </div>
-        <p class="footer-copyright">© 2023 KLACK Studios. All rights reserved.</p>
-    </footer>
+    <?php require_once "../../components/footer.php"?>
+
 
    
 
