@@ -549,8 +549,8 @@
                 <div class="grid-item">
                 <img src="https://img.youtube.com/vi/g_8QzqK-jpQ/hqdefault.jpg" alt="Dead End – Season 1 Episode 3 Thumbnail">
                     <div class="grid-item-overlay">
-                        <h3 class="grid-item-title">Neon Dreams</h3>
-                        <p class="grid-item-meta">2022 • Sci-Fi • 1h 52m</p>
+                        <h3 class="grid-item-title">Far From School</h3>
+                        <p class="grid-item-meta">2025 • Drama • 1h 52m</p>
                     </div>
                 </div>
                  <div class="grid-item" onclick="window.open('https://www.youtube.com/watch?v=__ddctNqkR4', '_blank')">

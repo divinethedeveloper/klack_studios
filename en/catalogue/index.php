@@ -48,7 +48,7 @@
             min-height: 500px;
             width: 100%;
             background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1542204165-65bf26472b9b?q=80&w=2070&auto=format&fit=crop');
+                        url('https://i.ytimg.com/vi/d23YGRnsD5Y/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAOKOeJgZgG4dRuZl-HPz9uRaA80A');
             background-size: cover;
             background-position: center;
             display: flex;

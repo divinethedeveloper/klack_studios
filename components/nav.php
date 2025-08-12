@@ -30,5 +30,7 @@
 
 
     <div class="preloader">
-        <img src="../../assets/preloader.gif" alt="">
+        <img src="../../assets/gif.gif" alt="">
     </div>
+
+    

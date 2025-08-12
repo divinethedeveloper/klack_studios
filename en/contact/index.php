@@ -455,7 +455,8 @@
         <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Find Us</h2>
         <div class="map-placeholder">
             <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1981.809158888067!2d-0.3384069!3d5.5553627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sgh!4v1699999999999"                width="600" 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1981.809158888067!2d-0.3384069!3d5.5553627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sgh!4v1699999999999"                
+                width="100%" 
                 height="450" 
                 style="border:0;" 
                 allowfullscreen="" 

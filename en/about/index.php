@@ -491,7 +491,7 @@
                 </div>
                 <div class="academy-card">
                     <h3>Scriptwriting & Post-production</h3>
-                    <p>Craft compelling narratives and transform raw footage into polished masterpieces with our combined course, guided by industry professionals.</p>
+                    <p>Craft compelling narratives and transform raw footage into polished masterpieces with our combined course.</p>
                 </div>
             </div>
 
@@ -607,55 +607,62 @@
     </footer>
 
     <script src='../../scripts/nav.js'></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script>
-        // Animate team members on scroll
-        const teamMembers = document.querySelectorAll('.team-member');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('animated');
-                    }, index * 200);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        teamMembers.forEach(member => {
-            observer.observe(member);
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
+    // Animate team members on scroll
+    const teamMembers = document.querySelectorAll('.team-member');
+    const teamObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('animated');
+                }, index * 200);
+            }
         });
+    }, { threshold: 0.1 });
 
-        // Animate stats numbers on scroll
-        const statItems = document.querySelectorAll('.stat-item');
-        const statObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('animated');
-                        const statNumber = entry.target.querySelector('.stat-number');
-                        const target = parseInt(statNumber.getAttribute('data-target'));
-                        let count = 0;
-                        const speed = 100;
-                        const increment = target / speed;
+    teamMembers.forEach(member => {
+        teamObserver.observe(member);
+    });
 
-                        const updateCount = () => {
-                            count += increment;
-                            if (count < target) {
-                                statNumber.textContent = Math.ceil(count);
-                                setTimeout(updateCount, 20);
-                            } else {
-                                statNumber.textContent = target + '+';
-                            }
-                        };
-                        updateCount();
-                    }, index * 500); // Staggered animation
-                }
-            });
-        }, { threshold: 0.5 });
-
-        statItems.forEach(item => {
-            observer.observe(item);
+    // Animate stats numbers sequentially on scroll
+    const statItems = document.querySelectorAll('.stat-item');
+    const statObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                animateStat(entry.target, 500 * index); // Delay each animation
+                observer.unobserve(entry.target); // Only animate once
+            }
         });
-    </script>
+    }, { threshold: 0.5 });
+
+    statItems.forEach(item => {
+        statObserver.observe(item);
+    });
+
+    function animateStat(item, delay) {
+        setTimeout(() => {
+            const statNumber = item.querySelector('.stat-number');
+            const target = parseInt(statNumber.getAttribute('data-target'));
+            let count = 0;
+            const duration = 3000; // Total animation duration (in milliseconds) - slower
+            const startTime = performance.now();
+
+            function updateCount(currentTime) {
+                const elapsedTime = currentTime - startTime;
+                const progress = Math.min(elapsedTime / duration, 1);
+                count = Math.ceil(target * progress);
+                statNumber.textContent = count + (progress === 1 ? '+' : '');
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                }
+            }
+
+            requestAnimationFrame(updateCount);
+            item.classList.add('animated');
+        }, delay);
+    }
+</script>
 </body>
 </html>
