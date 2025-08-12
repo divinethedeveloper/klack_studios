@@ -26,3 +26,9 @@
             <a href="../contact">Contact</a>
         </nav>
     </div>
+
+
+
+    <div class="preloader">
+        <img src="../../assets/preloader.gif" alt="">
+    </div>

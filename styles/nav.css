@@ -9,6 +9,8 @@
     align-items: center;
     background: transparent;
     z-index: 100;
+    height: 7rem;
+
     transition: var(--transition);
 }
 
@@ -25,6 +27,7 @@
     width: 70%;
     margin-left: 15%;
     border-radius: 4rem;
+    height: 5rem;
 }
 
 .navbar .logo {
@@ -196,4 +199,31 @@
     display: flex;
 }
 
+}
+
+.preloader{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background: radial-gradient( #0b1424, #0b1424,#0b1424);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 1;
+    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.preloader img{
+    width: calc(4rem + 15vw);
+    opacity: .5;
+}
+.preloader.active{
+    opacity: 0 !important;
+}
+
+.preloader.active.none{
+    display: none !important;
 }
