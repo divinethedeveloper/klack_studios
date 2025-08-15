@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,7 +48,7 @@
             width: 100%;
             height: 100vh;
             padding: 2rem 5vw;
-            background: url('https://images.unsplash.com/photo-1622107906469-632c870f19e9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'), rgba(15, 0, 0, 0.82);
+            background: url('https://images.unsplash.com/photo-1622107906469-632c870f19e9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'), rgba(15, 0, 0, 0.82);
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
@@ -499,27 +499,54 @@
                 font-size: 1rem;
             }
         }
+
+        .script-box {
+            border: 1px solid var(--text-secondary);
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            font-style: italic;
+            margin-bottom: 1rem;
+            white-space: pre-wrap;
+            text-align: left;
+        }
+
+        #timer {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: 1rem;
+        }
+
+        .recording {
+            background: red;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
+
+
 <body>
     <?php
     session_start();
-    $csrf_token = bin2hex(random_bytes(32));
-    $_SESSION['csrf_token'] = $csrf_token;
     require_once '../../components/nav.php';
     ?>
 
     <div class="container">
         <section class="form-section">
             <h2 class="section-title">Actor Application Form</h2>
-            <form id="actor-application-form" action="../../backend/submit_application.php" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
+            <form id="actor-application-form" action="../../backend/submit_application.php" method="POST" enctype="multipart/form-data" novalidate>
                 <div class="progress-bar">
                     <div class="progress-step active" data-step="1">Personal Info</div>
                     <div class="progress-step" data-step="2">Professional Experience</div>
                     <div class="progress-step" data-step="3">Skills & Attributes</div>
                     <div class="progress-step" data-step="4">Availability</div>
-                    <div class="progress-step" data-step="5">Uploads</div>
+                    <div class="progress-step" data-step="5">Media Uploads</div>
+                    <div class="progress-step" data-step="6">Voice Recording</div>
                 </div>
 
                 <div class="section-content active" data-step="1">
@@ -528,28 +555,28 @@
                     </div>
                     <div class="form-group" style="--delay: 2">
                         <label for="first-name">First Name</label>
-                        <input type="text" id="first-name" name="first-name" required>
+                        <input type="text" id="first-name" name="first-name">
                     </div>
                     <div class="form-group" style="--delay: 3">
                         <label for="last-name">Last Name</label>
-                        <input type="text" id="last-name" name="last-name" required>
+                        <input type="text" id="last-name" name="last-name">
                     </div>
                     <div class="form-group" style="--delay: 4">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <input type="tel" id="phone" name="phone">
                     </div>
                     <div class="form-group" style="--delay: 5">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email">
                     </div>
                     <div class="form-group" style="--delay: 6">
                         <label for="location">Location (City/Region)</label>
-                        <input type="text" id="location" name="location" required>
+                        <input type="text" id="location" name="location">
                     </div>
                     <div class="form-group" style="--delay: 7">
                         <label for="gender">Gender</label>
-                        <select id="gender" name="gender" required>
-                            <option value="" disabled selected>Select Gender</option>
+                        <select id="gender" name="gender">
+                            <option value="" selected>Select Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="other">Other</option>
@@ -558,12 +585,12 @@
                     </div>
                     <div class="form-group" style="--delay: 8">
                         <label for="dob">Date of Birth</label>
-                        <input type="date" id="dob" name="dob" required>
+                        <input type="date" id="dob" name="dob">
                     </div>
                     <div class="form-group" style="--delay: 9">
                         <label for="marital-status">Marital Status</label>
-                        <select id="marital-status" name="marital-status" required>
-                            <option value="" disabled selected>Select Status</option>
+                        <select id="marital-status" name="marital-status">
+                            <option value="" selected>Select Status</option>
                             <option value="single">Single</option>
                             <option value="married">Married</option>
                             <option value="divorced">Divorced</option>
@@ -572,7 +599,7 @@
                     </div>
                     <div class="form-group" style="--delay: 10">
                         <label for="occupation">Occupation (Current/Previous)</label>
-                        <input type="text" id="occupation" name="occupation" required>
+                        <input type="text" id="occupation" name="occupation">
                     </div>
                     <div class="btn-group">
                         <button type="button" class="btn next-btn" data-next="2">Next</button>
@@ -585,7 +612,7 @@
                     </div>
                     <div class="form-group" style="--delay: 2">
                         <label for="acting-experience">Years of Acting Experience</label>
-                        <input type="number" id="acting-experience" name="acting-experience" min="0" required>
+                        <input type="number" id="acting-experience" name="acting-experience" min="0">
                     </div>
                     <div class="form-group" style="--delay: 3">
                         <label for="previous-roles">Previous Roles / Productions</label>
@@ -624,7 +651,7 @@
                     <div class="form-group" style="--delay: 6">
                         <label for="body-type">Body Type</label>
                         <select id="body-type" name="body-type">
-                            <option value="" disabled selected>Select Body Type</option>
+                            <option value="" selected>Select Body Type</option>
                             <option value="slim">Slim</option>
                             <option value="athletic">Athletic</option>
                             <option value="average">Average</option>
@@ -649,21 +676,21 @@
                     <div class="form-group" style="--delay: 2">
                         <label>Are You Available for Travel?</label>
                         <div class="radio-group">
-                            <label><input type="radio" name="travel" value="yes" required> Yes</label>
+                            <label><input type="radio" name="travel" value="yes"> Yes</label>
                             <label><input type="radio" name="travel" value="no"> No</label>
                         </div>
                     </div>
                     <div class="form-group" style="--delay: 3">
                         <label>Are You Willing to Work Weekends/Night Shoots?</label>
                         <div class="radio-group">
-                            <label><input type="radio" name="weekends" value="yes" required> Yes</label>
+                            <label><input type="radio" name="weekends" value="yes"> Yes</label>
                             <label><input type="radio" name="weekends" value="no"> No</label>
                         </div>
                     </div>
                     <div class="form-group" style="--delay: 4">
                         <label for="availability">Current Availability</label>
-                        <select id="availability" name="availability" required>
-                            <option value="" disabled selected>Select Availability</option>
+                        <select id="availability" name="availability">
+                            <option value="" selected>Select Availability</option>
                             <option value="full-time">Full-time</option>
                             <option value="part-time">Part-time</option>
                             <option value="flexible">Flexible</option>
@@ -672,7 +699,7 @@
                     <div class="form-group" style="--delay: 5">
                         <label>Are You Currently Signed to Any Agency?</label>
                         <div class="radio-group">
-                            <label><input type="radio" name="agency" value="yes" required> Yes</label>
+                            <label><input type="radio" name="agency" value="yes"> Yes</label>
                             <label><input type="radio" name="agency" value="no"> No</label>
                         </div>
                     </div>
@@ -688,28 +715,34 @@
 
                 <div class="section-content" data-step="5">
                     <div class="form-group" style="--delay: 1">
-                        <h3>Uploads</h3>
+                        <h3>Media Uploads</h3>
                     </div>
-                    <div class="form-group" style="--delay: 2">
-                        <div class="file-upload">
-                            <label>Upload Headshot</label>
-                            <input type="file" id="headshot" name="headshot" accept="image/*" required>
-                        </div>
-                    </div>
-                    <div class="form-group" style="--delay: 3">
-                        <div class="file-upload">
-                            <label>Upload Full Body Photo</label>
-                            <input type="file" id="full-body" name="full-body" accept="image/*" required>
-                        </div>
-                    </div>
-                    <div class="form-group" style="--delay: 4">
-                        <div class="file-upload">
-                            <label>Upload Voice Recording (Optional)</label>
-                            <input type="file" id="voice-recording" name="voice-recording" accept="audio/*">
-                        </div>
+                    <div class="form-group file-upload" style="--delay: 2">
+                        <label for="headshot">Headshot Image (JPEG or PNG)</label>
+                        <input type="file" id="headshot" name="headshot" accept="image/jpeg,image/png">
                     </div>
                     <div class="btn-group">
                         <button type="button" class="btn prev-btn" data-prev="4">Previous</button>
+                        <button type="button" class="btn next-btn" data-next="6">Next</button>
+                    </div>
+                </div>
+
+                <div class="section-content" data-step="6">
+                    <div class="form-group" style="--delay: 1">
+                        <h3>Voice Recording</h3>
+                    </div>
+                    <div class="form-group" style="--delay: 2">
+                        <p>Read the following script with a dramatic theme:</p>
+                        <div class="script-box">
+                            In the shadows of forgotten dreams, I stand alone, facing the storm that rages within. My heart, a battlefield of emotions, cries out for redemption. Will the dawn bring light, or shall darkness prevail? This is my story, my truth.
+                        </div>
+                    </div>
+                    <div class="form-group" style="--delay: 3">
+                        <button type="button" id="record-button" class="btn">Start Recording</button>
+                        <div id="timer" style="display: none;">00:30</div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn prev-btn" data-prev="5">Previous</button>
                         <button type="submit" class="btn">Submit Application</button>
                     </div>
                 </div>
@@ -717,7 +750,6 @@
         </section>
     </div>
 
-    <!-- Loading Popup -->
     <div class="loading-popup" id="loading-popup">
         <div class="loading-content">
             <div class="spinner"></div>
@@ -725,7 +757,6 @@
         </div>
     </div>
 
-    <!-- Success/Error Modal -->
     <div class="modal" id="response-modal">
         <div class="modal-content">
             <canvas class="canvas-bg" id="particle-canvas"></canvas>
@@ -742,7 +773,7 @@
 
     <script src='../../scripts/nav.js'></script>
     <script>
-        // Progress bar navigation
+        // Progress bar navigation and sessionStorage handling
         const progressSteps = document.querySelectorAll('.progress-step');
         const sectionContents = document.querySelectorAll('.section-content');
         const nextButtons = document.querySelectorAll('.next-btn');
@@ -758,15 +789,88 @@
         const closeModalBtn = document.getElementById('close-modal');
         const modalContent = responseModal.querySelector('.modal-content');
 
+        let recordedAudioBlob = null;
+        let recorder;
+        let chunks = [];
+        let recordingTimeout;
+
+        // Initialize form data in sessionStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!sessionStorage.getItem('formData')) {
+                sessionStorage.setItem('formData', JSON.stringify({}));
+            }
+            showSection(1);
+            loadFormData();
+        });
+
+        // Function to save current section data to sessionStorage
+        function saveSectionData(step) {
+            const formData = JSON.parse(sessionStorage.getItem('formData') || '{}');
+            const section = document.querySelector(`.section-content[data-step="${step}"]`);
+            const inputs = section.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                if (input.type === 'radio') {
+                    if (input.checked) {
+                        formData[input.name] = input.value;
+                    }
+                } else if (input.type === 'file') {
+                    if (input.files && input.files[0]) {
+                        formData[input.name] = {
+                            name: input.files[0].name,
+                            type: input.files[0].type,
+                            size: input.files[0].size
+                        };
+                    } else {
+                        delete formData[input.name];
+                    }
+                } else {
+                    formData[input.name] = input.value;
+                }
+            });
+            sessionStorage.setItem('formData', JSON.stringify(formData));
+        }
+
+        // Function to load form data from sessionStorage
+        function loadFormData() {
+            const formData = JSON.parse(sessionStorage.getItem('formData') || '{}');
+            const inputs = form.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                if (input.type === 'radio') {
+                    if (formData[input.name] === input.value) {
+                        input.checked = true;
+                    }
+                } else if (input.type !== 'file' && formData[input.name]) {
+                    input.value = formData[input.name];
+                }
+            });
+            // Update agency details visibility
+            const agency = formData['agency'];
+            const agencyDetails = document.getElementById('agency-details');
+            const agencyInput = document.getElementById('agency-info');
+            if (agency === 'yes') {
+                agencyDetails.style.display = 'block';
+                agencyInput.removeAttribute('disabled');
+            } else {
+                agencyDetails.style.display = 'none';
+                agencyInput.setAttribute('disabled', 'disabled');
+            }
+        }
+
+        // Function to show a section
         function showSection(step) {
             progressSteps.forEach(stepEl => stepEl.classList.remove('active'));
-            sectionContents.forEach(content => content.classList.remove('active'));
+            sectionContents.forEach(content => {
+                if (content.dataset.step == step) {
+                    content.classList.add('active');
+                } else {
+                    content.classList.remove('active');
+                }
+            });
 
             const targetStep = document.querySelector(`.progress-step[data-step="${step}"]`);
-            const targetContent = document.querySelector(`.section-content[data-step="${step}"]`);
-
-            targetStep.classList.add('active');
-            targetContent.classList.add('active');
+            if (targetStep) {
+                targetStep.classList.add('active');
+            }
 
             progressSteps.forEach((stepEl, index) => {
                 if (parseInt(stepEl.dataset.step) < step) {
@@ -777,25 +881,35 @@
             });
         }
 
+        // Navigation event listeners
         progressSteps.forEach(step => {
             step.addEventListener('click', () => {
+                const currentStep = document.querySelector('.section-content.active').dataset.step;
+                saveSectionData(currentStep);
                 showSection(step.dataset.step);
+                loadFormData();
             });
         });
 
         nextButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
+                const currentStep = document.querySelector('.section-content.active').dataset.step;
+                saveSectionData(currentStep);
                 const nextStep = btn.dataset.next;
                 showSection(nextStep);
+                loadFormData();
             });
         });
 
         prevButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
+                const currentStep = document.querySelector('.section-content.active').dataset.step;
+                saveSectionData(currentStep);
                 const prevStep = btn.dataset.prev;
                 showSection(prevStep);
+                loadFormData();
             });
         });
 
@@ -803,28 +917,111 @@
         document.querySelectorAll('input[name="agency"]').forEach(radio => {
             radio.addEventListener('change', (e) => {
                 const agencyDetails = document.getElementById('agency-details');
-                agencyDetails.style.display = e.target.value === 'yes' ? 'block' : 'none';
+                const agencyInput = document.getElementById('agency-info');
                 if (e.target.value === 'yes') {
+                    agencyDetails.style.display = 'block';
+                    agencyInput.removeAttribute('disabled');
                     agencyDetails.style.animation = 'slideIn 0.5s ease forwards';
+                } else {
+                    agencyDetails.style.display = 'none';
+                    agencyInput.setAttribute('disabled', 'disabled');
                 }
+                saveSectionData(4);
             });
         });
 
-        // File upload preview
-        document.querySelectorAll('input[type="file"]').forEach(input => {
-            input.addEventListener('change', (e) => {
-                const label = e.target.parentElement.querySelector('label');
-                const fileName = e.target.files[0]?.name || 'No file chosen';
-                label.textContent = fileName;
+        // Handle file input changes to trigger save
+        document.querySelectorAll('input[type="file"]').forEach(fileInput => {
+            fileInput.addEventListener('change', () => {
+                const currentStep = document.querySelector('.section-content.active').dataset.step;
+                saveSectionData(currentStep);
             });
         });
 
-        // Form submission with AJAX
+        // Voice recording logic
+        const recordButton = document.getElementById('record-button');
+        const timer = document.getElementById('timer');
+
+        recordButton.addEventListener('click', async () => {
+            if (recordButton.textContent === 'Start Recording') {
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    recorder = new MediaRecorder(stream);
+                    recorder.ondataavailable = e => chunks.push(e.data);
+                    recorder.onstop = () => {
+                        recordedAudioBlob = new Blob(chunks, { type: 'audio/webm' });
+                        chunks = [];
+                        recordButton.textContent = 'Re-record';
+                        timer.style.display = 'none';
+                    };
+                    recorder.start();
+                    recordButton.textContent = 'Stop Recording';
+                    recordButton.classList.add('recording');
+                    timer.style.display = 'block';
+                    startTimer();
+                } catch (err) {
+                    console.error('Error accessing microphone', err);
+                }
+            } else if (recordButton.textContent === 'Stop Recording') {
+                recorder.stop();
+                clearTimeout(recordingTimeout);
+                recordButton.classList.remove('recording');
+            } else if (recordButton.textContent === 'Re-record') {
+                recordedAudioBlob = null;
+                recordButton.textContent = 'Start Recording';
+            }
+        });
+
+        function startTimer() {
+            let time = 30;
+            timer.textContent = `00:${time.toString().padStart(2, '0')}`;
+            const interval = setInterval(() => {
+                time--;
+                timer.textContent = `00:${time.toString().padStart(2, '0')}`;
+                if (time <= 0) {
+                    clearInterval(interval);
+                    recorder.stop();
+                    recordButton.classList.remove('recording');
+                    recordButton.textContent = 'Re-record';
+                }
+            }, 1000);
+            recordingTimeout = setTimeout(() => {
+                recorder.stop();
+                recordButton.classList.remove('recording');
+                recordButton.textContent = 'Re-record';
+            }, 30000);
+        }
+
+        // Form submission with AJAX using sessionStorage and file inputs
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
+            // Save current section before submitting
+            const currentStep = document.querySelector('.section-content.active').dataset.step;
+            saveSectionData(currentStep);
+
             loadingPopup.style.display = 'flex';
 
-            const formData = new FormData(form);
+            const formData = new FormData();
+            const storedData = JSON.parse(sessionStorage.getItem('formData') || '{}');
+
+            // Append text data from sessionStorage
+            for (const [key, value] of Object.entries(storedData)) {
+                if (key !== 'headshot') {
+                    formData.append(key, value);
+                }
+            }
+
+            // Append headshot file input directly from form
+            const headshotInput = document.getElementById('headshot');
+            if (headshotInput.files && headshotInput.files[0]) {
+                formData.append('headshot', headshotInput.files[0]);
+            }
+
+            // Append recorded voice if available
+            if (recordedAudioBlob) {
+                formData.append('voice-recording', recordedAudioBlob, 'voice-recording.webm');
+            }
+
             try {
                 const response = await fetch(form.action, {
                     method: 'POST',
@@ -834,7 +1031,6 @@
                 const text = await response.text();
                 loadingPopup.style.display = 'none';
 
-                // Check if the response contains success message
                 if (text.includes('Application Submitted Successfully')) {
                     modalContent.classList.add('success');
                     modalContent.classList.remove('error');
@@ -844,6 +1040,7 @@
                     modalLink.style.display = 'inline-flex';
                     modalCloseBtn.style.display = 'inline-flex';
                     responseModal.style.display = 'flex';
+                    sessionStorage.removeItem('formData'); // Clear form data on success
                     startParticles();
                 } else {
                     modalContent.classList.add('error');
@@ -933,3 +1130,4 @@
     </script>
 </body>
 </html>
+ 

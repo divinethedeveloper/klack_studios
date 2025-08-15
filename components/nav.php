@@ -27,10 +27,8 @@
         </nav>
     </div>
 
-
-
-    <div class="preloader">
+      <div class="preloader">
         <img src="../../assets/gif.gif" alt="">
-    </div>
+     </div>
 
-    
+ 

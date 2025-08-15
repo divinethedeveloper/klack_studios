@@ -10,6 +10,7 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         
         :root {
@@ -82,8 +83,12 @@
             z-index: 2;
             max-width: 50%;
             opacity: 0;
+            /* animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards; */
+        }
+        .hero-content.active{
             transform: translateY(30px);
             animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+
         }
 
         .hero-title {
@@ -99,7 +104,13 @@
             margin-bottom: 2.5rem;
             max-width: 80%;
             opacity: 0;
-            animation: fadeIn 1s ease 0.8s forwards;
+            margin-left: -5rem;
+            
+        }
+        .hero-subtitle.active{
+            animation: fadeIn .9s ease 0.8s forwards;
+            margin-left: 0rem
+
         }
 
         .btn {
@@ -118,7 +129,12 @@
             border: none;
             cursor: pointer;
             opacity: 0;
-            animation: fadeIn 0.5s ease 1.2s forwards;
+        }
+
+        .btn.active{
+            animation: fadeIn 1.5s ease 1.2s forwards;
+
+
         }
 
         .btn::before {
@@ -465,6 +481,7 @@
             }
         }
     </style>
+
 </head>
 <body>
 
