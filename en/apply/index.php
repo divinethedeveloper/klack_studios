@@ -1,14 +1,45 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KLACK Studios | Actor Application</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Bebas+Neue&display=stylesheet" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/nav.css">
-    <link rel="stylesheet" href="../../styles/footer.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>KLACK Studios | Actor Application</title>
+  <meta name="title" content="KLACK Studios | Actor Application">
+  <meta name="description" content="Apply to become an actor at KLACK Studios. Join our growing talent network in film, TV, commercials, and creative productions. Submit your actor application today.">
+  <meta name="keywords" content="KLACK Studios actor application, apply to be an actor, Ghana film auditions, KLACK casting call, acting opportunities, join KLACK Studios">
+  <meta name="author" content="KLACK Studios">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://klackstudios.online/apply">
+  <meta property="og:title" content="KLACK Studios | Actor Application">
+  <meta property="og:description" content="Want to act in films, commercials, or TV shows? Apply now to become part of KLACK Studios’ casting network.">
+  <meta property="og:image" content="https://klackstudios.online/android-chrome-512x512.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://klackstudios.online/apply">
+  <meta name="twitter:title" content="KLACK Studios | Actor Application">
+  <meta name="twitter:description" content="Join KLACK Studios as an actor. Submit your application and become part of our growing creative community.">
+  <meta name="twitter:image" content="https://klackstudios.online/android-chrome-512x512.png">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles/nav.css">
+  <link rel="stylesheet" href="../../styles/footer.css">
 
     <style>
         :root {

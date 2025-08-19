@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | KLACK Studios</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="../../styles/nav.css">
-    <link rel="stylesheet" href="../../styles/footer.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Primary SEO Meta Tags -->
+  <title>Contact Us | KLACK Studios</title>
+  <meta name="title" content="Contact KLACK Studios">
+  <meta name="description" content="Get in touch with KLACK Studios for premium film and media production services. We’re here to discuss your project, collaborations, and creative ideas.">
+  <meta name="keywords" content="Contact KLACK Studios, film production contact, media production Ghana, creative studio support, video editing inquiry, cinematography contact">
+  <meta name="author" content="KLACK Studios">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://klackstudios.online/contact">
+  <meta property="og:title" content="Contact Us | KLACK Studios">
+  <meta property="og:description" content="Reach out to KLACK Studios for premium film and media production services. Let’s bring your vision to life.">
+  <meta property="og:image" content="https://klackstudios.online/android-chrome-512x512.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://klackstudios.online/contact">
+  <meta name="twitter:title" content="Contact Us | KLACK Studios">
+  <meta name="twitter:description" content="Reach out to KLACK Studios for premium film and media production services. Let’s bring your vision to life.">
+  <meta name="twitter:image" content="https://klackstudios.online/android-chrome-512x512.png">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles/nav.css">
+  <link rel="stylesheet" href="../../styles/footer.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>

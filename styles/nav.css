@@ -7,9 +7,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.459);
+    background: transparent;
     z-index: 100;
-    height: 7rem;
     transition: var(--transition);
 }
 
@@ -19,14 +18,13 @@
 
 
 .navbar.scrolled {
-    background: rgba(10, 10, 10, 0.714);
+    background: rgba(10, 10, 10, 0.828);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     padding: 1rem 5vw;
-     width: 70%;
+    margin: 3rem;
+    width: 70%;
     margin-left: 15%;
     border-radius: 4rem;
-    height: 5rem;
-    margin-top: 3rem;
 }
 
 .navbar .logo {
