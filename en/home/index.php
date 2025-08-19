@@ -159,8 +159,8 @@
         }
 
         .btn-secondary {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
             margin-left: 1rem;
         }
 
@@ -494,8 +494,8 @@
                 <h1 class="hero-title">Dead End : Season 01</h1>
                 <p class="hero-subtitle">An epic tale of honor and betrayal set against the rugged landscapes of medieval Wales. Coming this fall to theaters worldwide.</p>
                 <div class="btn-group">
-                    <a href="#" class="btn">Stream Now</a>
-                    <a href="#" class="btn btn-secondary">Watch Trailer</a>
+                    <a href="https://youtu.be/PCR1Fu6Q7W8?t=92" class="btn">Stream Now</a>
+                    <a href="https://www.youtube.com/watch?v=WOaog9TQV4Y&pp=ygUNa2xhY2sgc3R1ZGlvIA%3D%3D" class="btn btn-secondary">Watch Trailer</a>
                 </div>
             </div>
         </section>
@@ -538,38 +538,39 @@
         </section>
         
         <section class="section" style="background: var(--bg-light);">
-            <h2 class="section-title">Coming Soon</h2>
-            <div class="grid">
-                <div class="grid-item">
-                    <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 1">
-                    <div class="grid-item-overlay">
-                        <h3 class="grid-item-title">Ocean's Edge</h3>
-                        <p class="grid-item-meta">2024 • Adventure • Coming June</p>
-                    </div>
-                </div>
-                <div class="grid-item">
-                    <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 1">
-                    <div class="grid-item-overlay">
-                        <h3 class="grid-item-title">The Forgotten Kingdom</h3>
-                        <p class="grid-item-meta">2024 • Fantasy • Coming August</p>
-                    </div>
-                </div>
-                <div class="grid-item">
-                    <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 1">
-                    <div class="grid-item-overlay">
-                        <h3 class="grid-item-title">Event Horizon</h3>
-                        <p class="grid-item-meta">2024 • Sci-Fi • Coming October</p>
-                    </div>
-                </div>
-                <div class="grid-item">
-                    <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 1">
-                    <div class="grid-item-overlay">
-                        <h3 class="grid-item-title">Modern Times</h3>
-                        <p class="grid-item-meta">2024 • Comedy • Coming December</p>
-                    </div>
-                </div>
+    <h2 class="section-title">Coming Soon</h2>
+    <div class="grid">
+        <div class="grid-item">
+            <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 1">
+            <div class="grid-item-overlay">
+                <h3 class="grid-item-title">Night at Kotokraba</h3>
+                <p class="grid-item-meta">2025 • Thriller • Coming March</p>
             </div>
-        </section>
+        </div>
+        <div class="grid-item">
+            <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 2">
+            <div class="grid-item-overlay">
+                <h3 class="grid-item-title">When the Rain Fell</h3>
+                <p class="grid-item-meta">2025 • Drama • Coming May</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 3">
+            <div class="grid-item-overlay">
+                <h3 class="grid-item-title">Love on the TroTro</h3>
+                <p class="grid-item-meta">2024 • Romance • Coming July</p>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 4">
+            <div class="grid-item-overlay">
+                <h3 class="grid-item-title">The Spirit by the Cocoa Farm</h3>
+                <p class="grid-item-meta">2025 • Horror • Coming September</p>
+            </div>
+        </div>
+    </div>
+</section>
+
     </div>
 
     <section class="apply-section">

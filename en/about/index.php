@@ -486,52 +486,70 @@
     <section class="team-section">
         <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Our Team</h2>
         <div class="team-grid">
-            <div class="team-member">
-                <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Eddie Bills">
-                <h3>Eddie Bills</h3>
-                <p>CEO, Creative Director & Editor</p>
-            </div>
-            <div class="team-member">
-                <img src="https://source.unsplash.com/random/300x300/?portrait" alt="David Ofori Kissi">
-                <h3>David Ofori Kissi</h3>
-                <p>Production Manager</p>
-            </div>
-            <div class="team-member">
-                <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Victor Honney Forson">
-                <h3>Victor Honney Forson</h3>
-                <p>Assistant Manager</p>
-            </div>
-            <div class="team-member">
-                <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Freda Opoku Baah">
-                <h3>Freda Opoku Baah</h3>
-                <p>Financial Manager</p>
-            </div>
-            <div class="team-member">
-                <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Emmanuel Baah Donkor">
-                <h3>Emmanuel Baah Donkor</h3>
-                <p>Assistant Director</p>
-            </div>
-            <div class="team-member">
-                <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Otoo Dennis Joe">
-                <h3>Otoo Dennis Joe</h3>
-                <p>D.O.P</p>
-            </div>
-            <div class="team-member">
-                <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Godwin Abo Niidjan">
-                <h3>Godwin Abo Niidjan</h3>
-                <p>D.O.P</p>
-            </div>
-            <div class="team-member">
-                <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Victor Honney Forson">
-                <h3>Victor Honney Forson</h3>
-                <p>D.O.P</p>
-            </div>
-            <div class="team-member">
-                <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Jamiah Hustern">
-                <h3>Jamiah Hustern</h3>
-                <p>Organizer & Continuity</p>
-            </div>
-        </div>
+    <div class="team-member">
+        <!-- <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Eddie Bills"> -->
+        <h4>Eddie Bills</h4>
+        <h3>Eddie Bills</h3>
+        <p>CEO, Creative Director & Editor</p>
+    </div>
+
+    <div class="team-member">
+        <!-- <img src="https://source.unsplash.com/random/300x300/?portrait" alt="David Ofori Kissi"> -->
+        <h4>David Ofori Kissi</h4>
+        <h3>Kobby Smile</h3>
+        <p>Production Manager</p>
+    </div>
+
+    <div class="team-member">
+        <!-- <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Victor Honney Forson"> -->
+        <h4>Victor Honney Forson</h4>
+        <h3>NK</h3>
+        <p>Assistant Manager</p>
+    </div>
+
+    <div class="team-member">
+        <!-- <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Freda Opoku Baah"> -->
+        <h4>Freda Opoku Baah</h4>
+        <h3>Afia Friday</h3>
+        <p>Financial Manager</p>
+    </div>
+
+    <div class="team-member">
+        <!-- <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Emmanuel Baah Donkor"> -->
+        <h4>Emmanuel Baah Donkor</h4>
+        <h3>EBD</h3>
+        <p>Assistant Director</p>
+    </div>
+
+    <div class="team-member">
+        <!-- <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Otoo Dennis Joe"> -->
+        <h4>Otoo Dennis Joe</h4>
+        <h3>Doe</h3>
+        <p>D.O.P</p>
+    </div>
+
+    <div class="team-member">
+        <!-- <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Godwin Abo Niidjan"> -->
+        <h4>Godwin Abo Niidjan</h4>
+        <h3>Niidjan Photography</h3>
+        <p>D.O.P</p>
+    </div>
+
+    <div class="team-member">
+        <!-- <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Fordjour Kelvin"> -->
+        <h4>Fordjour Kelvin</h4>
+        <h3>Quami Penxil</h3>
+        <p>D.O.P</p>
+    </div>
+
+    <div class="team-member">
+        <!-- <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Jamiah Hustern"> -->
+        <h4>Jamiah Hustern</h4>
+        <h3>Jay</h3>
+        <p>Organizer & Continuity</p>
+    </div>
+</div>
+
     </section>
 
     <?php require_once "../../components/footer.php"?>

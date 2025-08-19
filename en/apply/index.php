@@ -764,7 +764,7 @@
             <h2 id="modal-title"></h2>
             <p id="modal-message"></p>
             <div id="modal-errors"></div>
-            <a id="modal-link" class="btn" style="display: none;" href="https://chat.whatsapp.com/INVITE_LINK_HERE" target="_blank">Join Our WhatsApp Group</a>
+            <a id="modal-link" class="btn" style="display: none;" href="https://chat.whatsapp.com/FpfJh1NrmNt1DhwTKO011m" target="_blank">Join Our WhatsApp Group</a>
             <button class="btn" id="modal-close-btn" style="display: none;">Close</button>
         </div>
     </div>

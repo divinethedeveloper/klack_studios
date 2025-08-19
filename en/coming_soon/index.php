@@ -526,31 +526,62 @@
         </div>
         
         <div class="grid">
-            <div class="grid-item">
-            <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 1">
-            <div class="grid-item-overlay">
-                    <h3 class="grid-item-title">Eternal Kingdom</h3>
-                    <p class="grid-item-description">Embark on an epic journey through a mythical realm where ancient prophecies guide a young hero to unite warring kingdoms. With breathtaking battles and stunning landscapes, this fantasy adventure promises to captivate audiences of all ages.</p>
-                    <span class="grid-item-release">June 15, 2024</span>
-                </div>
+
+        <div class="grid-item">
+        <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 5">
+        <div class="grid-item-overlay">
+            <h3 class="grid-item-title">Dear Sir</h3>
+            <p class="grid-item-description">
+                A heartfelt drama following a young teacher who writes a series of letters to his late father, seeking guidance as he navigates love, career, and the challenges of a changing society.
+            </p>
+            <span class="grid-item-release">November 15, 2025</span>
+        </div>
             </div>
             <div class="grid-item">
-            <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 1">
-            <div class="grid-item-overlay">
-                    <h3 class="grid-item-title">Neon Horizon</h3>
-                    <p class="grid-item-description">In a futuristic city shrouded in neon lights, a rogue AI detective uncovers a conspiracy that threatens humanity. This sci-fi thriller blends high-tech action with deep emotional stakes, offering a visually spectacular experience.</p>
-                    <span class="grid-item-release">July 22, 2024</span>
+                <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 1">
+                <div class="grid-item-overlay">
+                    <h3 class="grid-item-title">Night at Kotokraba</h3>
+                    <p class="grid-item-description">
+                        When a journalist visits Kotokraba Market to uncover a local mystery, she finds herself trapped overnight in a place where the line between the living and the dead blurs. A suspense-filled thriller set in the heart of the city.
+                    </p>
+                    <span class="grid-item-release">March 14, 2025</span>
                 </div>
             </div>
+
             <div class="grid-item">
-            <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 1">
-            <div class="grid-item-overlay">
-                    <h3 class="grid-item-title">Shadows & Lies</h3>
-                    <p class="grid-item-description">A hard-boiled detective navigates the gritty underworld of a rain-soaked city to solve a murder that unravels a web of corruption. This noir masterpiece delivers suspense, intrigue, and unforgettable characters.</p>
-                    <span class="grid-item-release">August 5, 2024</span>
+                <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 2">
+                <div class="grid-item-overlay">
+                    <h3 class="grid-item-title">When the Rain Fell</h3>
+                    <p class="grid-item-description">
+                        In a small village, a torrential downpour brings more than just floodwaters — it unearths old secrets, broken promises, and the test of true love. A moving drama about family, forgiveness, and fate.
+                    </p>
+                    <span class="grid-item-release">May 2, 2025</span>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 3">
+                <div class="grid-item-overlay">
+                    <h3 class="grid-item-title">Love on the TroTro</h3>
+                    <p class="grid-item-description">
+                        Two strangers meet on a busy morning trotro ride in Accra. A series of unexpected events turns their commute into a journey of laughter, chaos, and unexpected romance.
+                    </p>
+                    <span class="grid-item-release">July 19, 2024</span>
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <img src="https://www.moviecomps.com/space/comingsoon.jpg" alt="Coming Soon 4">
+                <div class="grid-item-overlay">
+                    <h3 class="grid-item-title">The Spirit by the Cocoa Farm</h3>
+                    <p class="grid-item-description">
+                        A young farmer inherits a cocoa plantation only to discover it’s guarded by a restless spirit. To save the farm, he must uncover the ghost’s tragic past before the harvest season ends.
+                    </p>
+                    <span class="grid-item-release">September 27, 2025</span>
                 </div>
             </div>
         </div>
+
     </section>
     
     <section class="newsletter">
